@@ -8,39 +8,39 @@ import java.util.List;
 @Service
 public class MovieService {
     @Autowired
-    MovieRepository movieRepository;
+    MovieRepository movieRepositorys;
 
     public void addMovie(Movie movie){
-        movieRepository.saveMovie(movie);
+        movieRepositorys.saveMovie(movie);
     }
     public void addDirector(Director director){
-        movieRepository.saveDirector(director);
+        movieRepositorys.saveDirector(director);
     }
     public void createMovieDirectorPair(String movie, String director){
-        movieRepository.saveMovieDirectorPair(movie,director);
+        movieRepositorys.saveMovieDirectorPair(movie,director);
     }
     public Movie findMovie(String movieName){
-        return movieRepository.findMovie(movieName);
+        return movieRepositorys.findMovie(movieName);
     }
     public Director findDirector(String directorName){
-        return movieRepository.findDirector(directorName);
+        return movieRepositorys.findDirector(directorName);
     }
     public List<String> findMoviesFromDirector(String director){
-        return movieRepository.findMoviesFromDirector(director);
+        return movieRepositorys.findMoviesFromDirector(director);
     }
     public List<String> findAllMovies(){
-        return movieRepository.findAllMovies();
+        return movieRepositorys.findAllMovies();
     }
 
     public void deleteDirector(String director) {
-        movieRepository.deleteDirector(director);
+        movieRepositorys.deleteDirector(director);
     }
 
     public void deleteAllDirectors() {
-        movieRepository.deleteAllDirector();
+        movieRepositorys.deleteAllDirector();
     }
 
     public String getDirectorName(String movie) {
-        return movieRepository.getDirectorOfMovie(movie);
+        return movieRepositorys.getDirectorOfMovie(movie);
     }
 }
